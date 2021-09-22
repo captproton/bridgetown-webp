@@ -1,5 +1,6 @@
 # coding: utf-8
 require_relative 'lib/bridgetown-webp/version'
+require 'date'
 
 Gem::Specification.new do |spec|
   spec.name          = "bridgetown-webp"
@@ -19,8 +20,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^spec/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bridgetown", "~> 3.0"
-  spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake", "~> 1.5"
-  spec.add_development_dependency "minitest", '~> 5.4', '>= 5.4.3'
+  spec.add_development_dependency "bridgetown", "~> 0.21.4"
+  spec.add_development_dependency "bundler", "~> 2.2"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "minitest", '~> 5.14', '>= 5.0.3'
 end
