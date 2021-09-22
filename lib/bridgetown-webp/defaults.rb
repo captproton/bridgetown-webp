@@ -1,4 +1,4 @@
-module Jekyll
+module Bridgetown
   module Webp
 
     # The default configuration for the Webp generator
@@ -47,4 +47,4 @@ module Jekyll
     }
 
   end # module Webp
-end # module Jekyll
+end # module Bridgetown

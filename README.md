@@ -1,26 +1,26 @@
-[![Gem Version](https://img.shields.io/gem/v/jekyll-webp.svg)](https://rubygems.org/gems/jekyll-webp)
-[![Gem](https://img.shields.io/gem/dt/jekyll-webp.svg)](https://rubygems.org/gems/jekyll-webp)
-[![Join the chat at https://gitter.im/jekyll-webp/Lobby](https://badges.gitter.im/jekyll-webp/Lobby.svg)](https://gitter.im/jekyll-webp/Lobby)
-[![Dependency Status](https://gemnasium.com/badges/github.com/sverrirs/jekyll-webp.svg)](https://gemnasium.com/github.com/sverrirs/jekyll-webp)
-[![Code Climate](https://codeclimate.com/github/sverrirs/jekyll-webp/badges/gpa.svg)](https://codeclimate.com/github/sverrirs/jekyll-webp)
-[![security](https://hakiri.io/github/sverrirs/jekyll-webp/master.svg)](https://hakiri.io/github/sverrirs/jekyll-webp/master)
+[![Gem Version](https://img.shields.io/gem/v/bridgetown-webp.svg)](https://rubygems.org/gems/bridgetown-webp)
+[![Gem](https://img.shields.io/gem/dt/bridgetown-webp.svg)](https://rubygems.org/gems/bridgetown-webp)
+[![Join the chat at https://gitter.im/bridgetown-webp/Lobby](https://badges.gitter.im/bridgetown-webp/Lobby.svg)](https://gitter.im/bridgetown-webp/Lobby)
+[![Dependency Status](https://gemnasium.com/badges/github.com/sverrirs/bridgetown-webp.svg)](https://gemnasium.com/github.com/sverrirs/bridgetown-webp)
+[![Code Climate](https://codeclimate.com/github/sverrirs/bridgetown-webp/badges/gpa.svg)](https://codeclimate.com/github/sverrirs/bridgetown-webp)
+[![security](https://hakiri.io/github/sverrirs/bridgetown-webp/master.svg)](https://hakiri.io/github/sverrirs/bridgetown-webp/master)
 
-# WebP Generator for Jekyll
-WebP Image Generator for Jekyll Sites can automatically generate WebP images for all images on your static site and serve them when possible. View on [rubygems.org](https://rubygems.org/gems/jekyll-webp).
+# WebP Generator for Bridgetown
+WebP Image Generator for Bridgetown Sites can automatically generate WebP images for all images on your static site and serve them when possible. View on [rubygems.org](https://rubygems.org/gems/bridgetown-webp).
 
-> Read more about this tool on my blog at <a href="https://blog.sverrirs.com/2016/06/webp-generator-for-jekyll-sites.html" target="_blank">blog.sverrirs.com</a>
+> Read more about this tool on my blog at <a href="https://blog.sverrirs.com/2016/06/webp-generator-for-bridgetown-sites.html" target="_blank">blog.sverrirs.com</a>
 
 ## Installation
 
 ```
-gem install jekyll-webp
+gem install bridgetown-webp
 ```
 
 The release includes all necessary files to run, including the WebP redistributable executable files.
 
 > Currently the release includes the v0.6.1 version of the WebP utilities for Windows, Linux and Mac OS X 10.9 (Mountain Lion). Other versions and releases can be downloaded directly from <a href="https://developers.google.com/speed/webp/docs/precompiled" target="_blank">the Google page</a>.
 
-Add the gem to your `Gemfile` and to Jekyll's `_config.yml` then run `jekyll serve` again and you should see the generator run during site generation.
+Add the gem to your `Gemfile` and to Bridgetown's `_config.yml` then run `bridgetown serve` again and you should see the generator run during site generation.
 
 ## Configuration
 The plugin can be configured in the site's `_config.yml` file by including the `webp` configuration element

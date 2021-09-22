@@ -1,6 +1,6 @@
 require 'open3'
 
-module Jekyll
+module Bridgetown
   module Webp
 
     class WebpExec
@@ -18,9 +18,9 @@ module Jekyll
         exe_name = WebpExec.exe_name
 
         # We need to locate the Gems bin path as we're currently running inside the 
-        # jekyll site working directory
+        # bridgetown site working directory
         # http://stackoverflow.com/a/10083594/779521
-        gem_spec = Gem::Specification.find_by_name("jekyll-webp")
+        gem_spec = Gem::Specification.find_by_name("bridgetown-webp")
         gem_root = gem_spec.gem_dir
 
         # Construct the full path to the executable
@@ -41,8 +41,8 @@ module Jekyll
         end
 
         if exit_code != 0
-          Jekyll.logger.error("WebP:","Conversion for image #{input_file} failed, no webp version could be created for this image")
-          Jekyll.logger.debug("WebP:","cwebp returned #{exit_code} with error #{error}")
+          Bridgetown.logger.error("WebP:","Conversion for image #{input_file} failed, no webp version could be created for this image")
+          Bridgetown.logger.debug("WebP:","cwebp returned #{exit_code} with error #{error}")
         end
 
         # Return any captured return value
@@ -101,4 +101,4 @@ module Jekyll
       return 1.size == 8
     end
   end #module OS
-end #module Jekyll
+end #module Bridgetown

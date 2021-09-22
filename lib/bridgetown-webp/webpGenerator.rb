@@ -1,12 +1,12 @@
-require 'jekyll/document'
+require 'bridgetown/document'
 require 'fileutils'
 
-module Jekyll
+module Bridgetown
   module Webp
 
     #
     # A static file to hold the generated webp image after generation
-    # so that Jekyll will copy it into the site output directory
+    # so that Bridgetown will copy it into the site output directory
     class WebpFile < StaticFile
       def write(dest)
         true # Recover from strange exception when starting server without --auto
@@ -31,11 +31,11 @@ module Jekyll
 
         # If disabled then simply quit
         if !@config['enabled']
-          Jekyll.logger.info "WebP:","Disabled in site.config."
+          Bridgetown.logger.info "WebP:","Disabled in site.config."
           return
         end
 
-        Jekyll.logger.debug "WebP:","Starting"
+        Bridgetown.logger.debug "WebP:","Starting"
 
         # If the site destination directory has not yet been created then create it now. Otherwise, we cannot write our file there.
         Dir::mkdir(site.dest) if !File.directory? site.dest
@@ -59,7 +59,7 @@ module Jekyll
           imgdir_source = File.join(site.source, imgdir)
           imgdir_destination = File.join(site.dest, imgdir)
           FileUtils::mkdir_p(imgdir_destination)
-          Jekyll.logger.info "WebP:","Processing #{imgdir_source}"
+          Bridgetown.logger.info "WebP:","Processing #{imgdir_source}"
 
           # handle only jpg, jpeg, png and gif
           for imgfile in Dir[imgdir_source + "**/*.*"]
@@ -89,14 +89,14 @@ module Jekyll
               # is newer than the source file, if not then regenerate
               if @config['regenerate'] || !File.file?(outfile_fullpath_webp) ||
                  File.mtime(outfile_fullpath_webp) <= File.mtime(imgfile)
-                Jekyll.logger.info "WebP:", "Change to source image file #{imgfile} detected, regenerating WebP"
+                Bridgetown.logger.info "WebP:", "Change to source image file #{imgfile} detected, regenerating WebP"
 
                 # Generate the file
                 WebpExec.run(@config['quality'], @config['flags'], imgfile, outfile_fullpath_webp)
                 file_count += 1
               end
               if File.file?(outfile_fullpath_webp)
-                # Keep the webp file from being cleaned by Jekyll
+                # Keep the webp file from being cleaned by Bridgetown
                 site.static_files << WebpFile.new(site,
                                                   site.dest,
                                                   File.join(imgdir, imgfile_relative_path),
@@ -105,11 +105,11 @@ module Jekyll
           end # dir.foreach
         end # img_dir
 
-        Jekyll.logger.info "WebP:","Generator Complete: #{file_count} file(s) generated"
+        Bridgetown.logger.info "WebP:","Generator Complete: #{file_count} file(s) generated"
 
       end #function generate
 
     end #class WebPGenerator
 
   end #module Webp
-end #module Jekyll
+end #module Bridgetown
