@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.date          = DateTime.now.strftime('%Y-%m-%d')
   spec.authors       = ["Sverrir Sigmundarson", "Carl Tanner"]
-  spec.email         = ["bridgetown@sverrirs.com"]
-  spec.homepage      = "https://github.com/sverrirs/bridgetown-webp"
+  spec.email         = ["hello@gocarlgo.com"]
+  spec.homepage      = "https://github.com/captproton/bridgetown-webp"
   spec.license       = "MIT"
 
   spec.summary       = %q{WebP image generator for Bridgetown websites}
